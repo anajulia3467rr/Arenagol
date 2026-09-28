@@ -1,4 +1,19 @@
-page.evaluate(() => {
+const puppeteer = require('puppeteer-core');
+const chromium = require('@sparticuz/chromium');
+
+(async () => {
+  const browser = await puppeteer.launch({
+    args: chromium.args,
+    defaultViewport: chromium.defaultViewport,
+    executablePath: await chromium.executablePath(),
+    headless: chromium.headless,
+  });
+
+  const page = await browser.newPage();
+  await page.goto('https://www.haxball.com/headless', { waitUntil: 'networkidle2' });
+
+  // AQUÍ CONTINÚA TU CÓDIGO NORMAL DE LA SALA...
+
 // ▇▇▇▇▇▇▇▇▇ ⚙️ CONFIGURACIÓN DEL HOST ▇▇▇▇▇▇▇▇▇
 
 // 📝 NOMBRE DEL HOST
@@ -6383,4 +6398,4 @@ if(player.team===2){room.setPlayerTeam(player.id,1)}});room.startGame()},4500)}e
 team1.forEach(player=>room.setPlayerTeam(player.id,1));team2.forEach(player=>room.setPlayerTeam(player.id,2));balanceTeams()},3000);setTimeout(function(){balanceTeams()},4000);setTimeout(function(){room.startGame()},4500)}}}
 function rfc3986EncodeURIComponent(_0x23ab4f){var _0x151c08=_0x3c81f9;return encodeURIComponent(_0x23ab4f)[_0x151c08(0x17d)](/[!'()*]/g,escape)}
 const allowedStadiums=["👑 RᴇᴀʟFᴜᴛsᴀʟ⚽ 𝐀𝐑𝐄𝐍𝐀𝐆𝐎𝐋","𝙵 𝚄 𝚃 𝚂 𝙰 𝙻 ⨯² 🏆 𝐀𝐑𝐄𝐍𝐀𝐆𝐎𝐋","𝙵 𝚄 𝚃 𝚂 𝙰 𝙻 ⨯³ 🏆 𝐀𝐑𝐄𝐍𝐀𝐆𝐎𝐋","𝙵 𝚄 𝚃 𝚂 𝙰 𝙻 ⨯⁴ 🏆 𝐀𝐑𝐄𝐍𝐀𝐆𝐎𝐋","𝙵 𝚄 𝚃 𝚂 𝙰 𝙻 ⨯⁵ 🏆 𝐀𝐑𝐄𝐍𝐀𝐆𝐎𝐋","𝙵 𝚄 𝚃 𝚂 𝙰 𝙻 ⨯⁷ 🏆 𝐀𝐑𝐄𝐍𝐀𝐆𝐎𝐋","⚽️ Futsal x5 👑 𝐀𝐑𝐄𝐍𝐀𝐆𝐎𝐋","🏆 CAMPEONES 🌿⭐🌿 𝐀𝐑𝐄𝐍𝐀𝐆𝐎𝐋","✨ ɢᴀʟᴀ ᴅᴇ ᴘʀᴇᴍɪᴏs 🏅 ✨ 𝐀𝐑𝐄𝐍𝐀𝐆𝐎𝐋","Eɴᴛʀᴇɴᴀᴍɪᴇɴᴛᴏ (Futsal) 💪 𝐀𝐑𝐄𝐍𝐀𝐆𝐎𝐋"];room.onStadiumChange=function(newStadiumName,byPlayer){if(!allowedStadiums.includes(newStadiumName)){RSRMap=!1;currentMap="❔ Desconocido"}}  
-})
+})();
