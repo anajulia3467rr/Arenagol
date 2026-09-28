@@ -613,6 +613,12 @@ var cooldownActive = {}; // Objeto para rastrear el estado de cooldown de cada a
 
 //  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇  CONFIGURACIÓN AVANZADA 🚀 ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
 
+global.localStorage = {
+  getItem: (key) => null,
+  setItem: (key, value) => {},
+  removeItem: (key) => {}
+};
+	
 // Define una variable global para llevar el seguimiento de los minutos jugados por cada jugador
 let playerMinutesPlayed = JSON.parse(localStorage.getItem('playerMinutesPlayed')) || {};
 
